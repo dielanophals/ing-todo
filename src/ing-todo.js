@@ -44,7 +44,7 @@ class IngTodo extends LitElement {
 
   constructor() {
     super();
-    this.todos = [];
+    this.todos = JSON.parse(localStorage.getItem('todos')) || [];
   }
 
   addTodo = e => {
@@ -67,8 +67,12 @@ class IngTodo extends LitElement {
 
       return todo;
     });
+  }
 
-    console.log(this.todos);
+  updated(changedProps) {
+    if (changedProps.has('todos')) {
+      localStorage.setItem("todos", JSON.stringify(this.todos));
+    }
   }
 
   render() {
