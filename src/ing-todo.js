@@ -19,13 +19,13 @@ class IngTodo extends LitElement {
       align-items: center;
       justify-content: center;
       font-size: calc(10px + 2vmin);
-      max-width: 1024px;
       margin: 0 auto;
       text-align: center;
     }
 
     main {
       flex-grow: 1;
+      max-width: 1024px;
     }
   `;
 

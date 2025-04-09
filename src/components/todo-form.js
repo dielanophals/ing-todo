@@ -7,8 +7,29 @@ export class TodoForm extends LitElement {
 
     static styles = [
         css`
-            :host {
-                display: block;
+            form {
+                background-color: #f0f0f0;
+                margin-top: 30px;
+                border-radius: 4px;
+            }
+
+            input[type=text], button{
+                border-radius: 4px;
+                border: none;
+                padding: 12px 16px;
+                background-color: #f0f0f0;
+                font-size: 16px;
+                color: #333;
+            }
+        
+            button {
+                color: #333;
+                cursor: pointer;
+            }
+
+            button:active{
+                background-color: #696969;
+                color: white;
             }
         `
     ];
