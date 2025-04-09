@@ -11,6 +11,7 @@ export class TodoForm extends LitElement {
                 background-color: #f0f0f0;
                 margin-top: 30px;
                 border-radius: 4px;
+                display: inline-block;
             }
 
             input[type=text], button{

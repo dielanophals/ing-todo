@@ -1,5 +1,6 @@
 import { LitElement, html, css } from 'lit';
 import './components/todo-form.js'
+import './components/todo-item.js'
 
 class IngTodo extends LitElement {
   static properties = {
@@ -30,6 +31,15 @@ class IngTodo extends LitElement {
       flex-grow: 1;
       max-width: 1024px;
     }
+
+    .todo-items {
+      margin-top: 20px;
+    }
+
+    .todo-items p {
+      color: var(--font-color);
+      font-size: 20px;
+    }
   `;
 
   constructor() {
@@ -45,10 +55,38 @@ class IngTodo extends LitElement {
     }];
   }
 
+  removeTodoItem = e => {
+    this.todos = this.todos.filter(todo => todo.id !== e.detail);
+  }
+
+  toggleCompleteTodoItem = e => {
+    this.todos = this.todos.map(todo => {
+      if(todo.id == e.detail.todoId) {
+        return {...todo, isCompleted: e.detail.checkboxValue}
+      }
+
+      return todo;
+    });
+
+    console.log(this.todos);
+  }
+
   render() {
     return html`
       <main>
         <todo-form @submit-todo=${this.addTodo}></todo-form>
+        <section class="todo-items">
+          <p>${!this.todos.length && "No todos added yet" || ''}</p>
+          <ul>
+            ${this.todos.map(todo => html`
+              <todo-item
+                .todo=${todo}
+                @remove-todo-item=${this.removeTodoItem}
+                @toggle-complete-todo-item=${this.toggleCompleteTodoItem}
+              ></todo-item>
+            `)}
+          </ul>
+        </section>
       </main>
     `;
   }
