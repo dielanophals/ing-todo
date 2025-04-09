@@ -55,7 +55,6 @@ export class TodoItem extends LitElement {
     }
 
     toggleCompleteTodoItem = e => {
-        console.log(e.target.checked);
         this.dispatchEvent(new CustomEvent('toggle-complete-todo-item', {
             detail: {
                 checkboxValue: e.target.checked,
