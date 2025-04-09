@@ -1,23 +1,27 @@
 import { LitElement, html, css } from 'lit';
-
-const logo = new URL('../assets/open-wc-logo.svg', import.meta.url).href;
+import './components/todo-form.js'
 
 class IngTodo extends LitElement {
-  static properties = {}
+  static properties = {
+    todos: { type: Array },
+  }
 
   static styles = css`
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
     :host {
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: flex-start;
+      justify-content: center;
       font-size: calc(10px + 2vmin);
-      color: #1a2b42;
-      max-width: 960px;
+      max-width: 1024px;
       margin: 0 auto;
       text-align: center;
-      background-color: var(--ing-todo-background-color);
     }
 
     main {
@@ -27,12 +31,21 @@ class IngTodo extends LitElement {
 
   constructor() {
     super();
+    this.todos = [];
+  }
+
+  addTodo = e => {
+    this.todos = [...this.todos, {
+      id: crypto.randomUUID(),
+      title: e.detail,
+      isCompleted: false
+    }];
   }
 
   render() {
     return html`
       <main>
-        
+        <todo-form @submit-todo=${this.addTodo}></todo-form>
       </main>
     `;
   }
