@@ -1,0 +1,22 @@
+{
+  "name": "ing-todo",
+  "description": "Webcomponent ing-todo following open-wc recommendations",
+  "license": "MIT",
+  "author": "ing-todo",
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "analyze": "cem analyze --litelement",
+    "start": "web-dev-server"
+  },
+  "dependencies": {
+    "@lion/ui": "^0.11.2",
+    "lit": "^3.1.4",
+    "singleton-manager": "^1.7.0"
+  },
+  "devDependencies": {
+    "@custom-elements-manifest/analyzer": "^0.10.3",
+    "@web/dev-server": "^0.4.6"
+  },
+  "customElements": "custom-elements.json"
+}
