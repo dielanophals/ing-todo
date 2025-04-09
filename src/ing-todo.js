@@ -13,6 +13,9 @@ class IngTodo extends LitElement {
     }
 
     :host {
+      --ing-color: #ff6200;
+      --font-color: #333;
+      --bg-color: #f0f0f0;;
       min-height: 100vh;
       display: flex;
       flex-direction: column;

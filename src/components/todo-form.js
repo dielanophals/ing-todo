@@ -17,13 +17,13 @@ export class TodoForm extends LitElement {
                 border-radius: 4px;
                 border: none;
                 padding: 12px 16px;
-                background-color: #f0f0f0;
+                background-color: var(--bg-color);
                 font-size: 16px;
-                color: #333;
+                color: var(--font-color);
             }
         
             button {
-                color: #333;
+                color: var(--font-color);
                 cursor: pointer;
             }
 
