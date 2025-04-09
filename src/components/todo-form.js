@@ -35,8 +35,8 @@ export class TodoForm extends LitElement {
     render() {
         return html`
             <form @submit="${this.submitHandler}">
-                <input type="text" name="lastName" label="Todo" placeholder="Add todo..." .value=${this.todo} @input="${this.changeTodo}"></lion-input>
-                <button>Add todo</button>
+                <input type="text" name="todo" label="Todo" placeholder="Add todo..." .value=${this.todo} @input="${this.changeTodo}" autocomplete="off" />
+                <button type="submit">Add todo</button>
             </form>
         `;
     }
