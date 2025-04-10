@@ -80,7 +80,7 @@ class IngTodo extends LitElement {
       <main>
         <todo-form @submit-todo=${this.addTodo}></todo-form>
         <section class="todo-items">
-          <p>${!this.todos.length && "No todos added yet" || ''}</p>
+          ${!this.todos.length ? html`<p>No todos added yet</p>` : ''}
           <ul>
             ${this.todos.map(todo => html`
               <todo-item
