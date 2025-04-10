@@ -25,17 +25,19 @@ export class TodoItem extends LitElement {
                 box-shadow: rgba(0, 0, 0, 0.14) 0px 2px 2px 0px, rgba(0, 0, 0, 0.12) 0px 3px 1px -2px, rgba(0, 0, 0, 0.2) 0px 1px 5px 0px;
             }
 
+            li label {
+                font-size: 16px;
+                flex: 1;
+                margin: 0 15px;
+                cursor: pointer;
+            }
+
             input[type=checkbox] {
                 width: 24px;
                 height: 24px;
                 accent-color: var(--ing-color);
                 flex: 0 0 auto;
-            }
-
-            li label {
-                font-size: 16px;
-                flex: 1;
-                margin: 0 15px;
+                cursor: pointer;
             }
 
             input[type="checkbox"]:checked + label {
