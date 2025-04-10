@@ -11,8 +11,8 @@ export class TodoItem extends LitElement {
         css`
             li {
                 list-style: none;
-                width: 500px;
-                max-width:100%;
+                width:90%;
+                box-sizing: border-box;
                 text-align: left;
                 display: flex;
                 align-items: center;
@@ -20,6 +20,7 @@ export class TodoItem extends LitElement {
                 padding: 12px 15px;
                 background-color: var(--bg-color);;
                 margin: 10px 0;
+                margin-left: 5%;
                 word-break: break-word;
                 box-shadow: rgba(0, 0, 0, 0.14) 0px 2px 2px 0px, rgba(0, 0, 0, 0.12) 0px 3px 1px -2px, rgba(0, 0, 0, 0.2) 0px 1px 5px 0px;
             }
@@ -46,6 +47,17 @@ export class TodoItem extends LitElement {
             li img {
                 width:20px;
                 cursor: pointer;
+            }
+
+            @media only screen and (min-width : 1025px) {
+                li img {
+                    opacity: 0;
+                    transition: 0.2s;
+                }
+
+                li:hover img {
+                    opacity: 1;
+                }
             }
         `
     ];

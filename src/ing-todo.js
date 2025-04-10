@@ -1,4 +1,5 @@
 import { LitElement, html, css } from 'lit';
+import { repeat } from 'lit/directives/repeat.js';
 import './components/todo-form.js'
 import './components/todo-item.js'
 
@@ -16,20 +17,21 @@ class IngTodo extends LitElement {
     :host {
       --ing-color: #ff6200;
       --font-color: #333;
-      --bg-color: #f0f0f0;;
+      --bg-color: #f0f0f0;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      font-size: calc(10px + 2vmin);
+      font-size: 16px;
       margin: 0 auto;
       text-align: center;
     }
 
     main {
       flex-grow: 1;
-      max-width: 1024px;
+      width: 600px;
+      max-width:100%;
     }
 
     .todo-items {
@@ -82,13 +84,16 @@ class IngTodo extends LitElement {
         <section class="todo-items">
           ${!this.todos.length ? html`<p>No todos added yet</p>` : ''}
           <ul>
-            ${this.todos.map(todo => html`
+            ${repeat(
+              this.todos,
+              todo => todo.id, // de unieke key
+              todo => html`
               <todo-item
                 .todo=${todo}
                 @remove-todo-item=${this.removeTodoItem}
                 @toggle-complete-todo-item=${this.toggleCompleteTodoItem}
               ></todo-item>
-            `)}
+              `)}
           </ul>
         </section>
       </main>
