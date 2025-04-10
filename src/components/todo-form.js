@@ -1,4 +1,6 @@
 import { LitElement, html, css } from 'lit';
+import '@lion/ui/define/lion-form.js';
+import '@lion/ui/define/lion-input.js';
 
 export class TodoForm extends LitElement {
     static properties = {
@@ -11,7 +13,7 @@ export class TodoForm extends LitElement {
                 background-color: #f0f0f0;
                 margin-top: 30px;
                 border-radius: 4px;
-                display: inline-block;
+                display: inline-flex;
             }
 
             input[type=text], button{
@@ -26,6 +28,7 @@ export class TodoForm extends LitElement {
             button {
                 color: var(--font-color);
                 cursor: pointer;
+                margin-left: 10px;
             }
 
             button:active{
@@ -56,10 +59,12 @@ export class TodoForm extends LitElement {
 
     render() {
         return html`
-            <form @submit="${this.submitHandler}">
-                <input type="text" name="todo" label="Todo" placeholder="Add todo..." .value=${this.todo} @input="${this.changeTodo}" autocomplete="off" />
-                <button type="submit">Add todo</button>
-            </form>
+            <lion-form @submit=${this.submitHandler}>
+                <form @submit=${ev => ev.preventDefault()}>
+                    <lion-input name="todo" label="" .modelValue=${this.todo} @input=${this.changeTodo}></lion-input>
+                    <button>Add todo</button>
+                </form>
+            </lion-form>
         `;
     }
 }
