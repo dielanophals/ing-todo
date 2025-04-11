@@ -34,6 +34,10 @@ class IngTodo extends LitElement {
       max-width:100%;
     }
 
+    .todo-header {
+      margin-top: 20px;
+    }
+
     .todo-items {
       margin-top: 20px;
     }
@@ -80,6 +84,7 @@ class IngTodo extends LitElement {
   render() {
     return html`
       <main>
+        <h1 class="todo-header">To do list</h1>
         <todo-form @submit-todo=${this.addTodo}></todo-form>
         <section class="todo-items">
           ${!this.todos.length ? html`<p>No todos added yet</p>` : ''}

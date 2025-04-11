@@ -11,7 +11,7 @@ export class TodoForm extends LitElement {
         css`
             form {
                 background-color: #f0f0f0;
-                margin-top: 30px;
+                margin-top: 10px;
                 border-radius: 4px;
                 display: inline-flex;
             }
