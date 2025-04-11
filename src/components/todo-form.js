@@ -44,7 +44,7 @@ export class TodoForm extends LitElement {
 
     submitHandler = e => {
         e.preventDefault();
-        if(this.todo){
+        if(this.todo.trim()){
             this.dispatchEvent(new CustomEvent('submit-todo', {
                 detail: this.todo
             }));
