@@ -32,14 +32,14 @@ export class TodoItem extends LitElement {
     render() {
         return html`
             <li class="checkbox-area">
-                <input type="checkbox" id="todo-checkbox" .checked=${this.todo.isCompleted} @change=${this.toggleCompleteTodoItem} title="Complete item">
-                <label for="todo-checkbox" title="Complete item">${this.todo.title}</label>
+                <input type="checkbox" id=${this.todo.id} .checked=${this.todo.isCompleted} @change=${this.toggleCompleteTodoItem} title="Complete item">
+                <label for=${this.todo.id} title="Complete item">${this.todo.title}</label>
                 <button
                     @click=${() => this.removeTodoItem(this.todo.id)}
                     title="Delete item"
                     aria-label="Delete todo"
                     class="todo-delete"
-                    >
+                >
                     <img src=${cross} alt="" />
                 </button>
             </li>
