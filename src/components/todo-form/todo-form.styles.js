@@ -8,6 +8,11 @@ export const todoFormStyles = css`
         display: inline-flex;
     }
 
+    label {
+        position: absolute;
+        left: -9999px;
+    }
+
     input[type=text], button{
         border-radius: 4px;
         border: none;

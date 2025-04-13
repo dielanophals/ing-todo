@@ -34,7 +34,7 @@ export class TodoForm extends LitElement {
         return html`
             <lion-form @submit=${this.submitHandler}>
                 <form @submit=${ev => ev.preventDefault()}>
-                    <lion-input name="todo" label="" .modelValue=${this.todo} @input=${this.changeTodo} autocomplete="off"></lion-input>
+                    <lion-input name="todo" label="New todo" .modelValue=${this.todo} @input=${this.changeTodo} autocomplete="off"></lion-input>
                     <button>Add todo</button>
                 </form>
             </lion-form>
