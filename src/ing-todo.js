@@ -50,7 +50,7 @@ class IngTodo extends LitElement {
         <h1 class="todo-header">To do list</h1>
         <todo-form @submit-todo=${this.addTodo}></todo-form>
         <section class="todo-items">
-          ${!this.todos.length ? html`<p>No todos added yet</p>` : ''}
+          ${!this.todos.length ? html`<p aria-live="polite">No todos added yet</p>` : ''}
           <ul>
             ${repeat(
               this.todos,
