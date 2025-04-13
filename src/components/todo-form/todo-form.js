@@ -19,6 +19,7 @@ export class TodoForm extends LitElement {
     // Send custom event when form is submitted
     submitHandler = e => {
         e.preventDefault();
+        // Check if todo is not equal to empty spaces
         if(this.todo.trim()){
             this.dispatchEvent(new CustomEvent('submit-todo', {
                 detail: this.todo
