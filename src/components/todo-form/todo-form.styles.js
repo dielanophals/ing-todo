@@ -26,6 +26,7 @@ export const todoFormStyles = css`
         color: var(--font-color);
         cursor: pointer;
         margin-left: 10px;
+        font-family: var(--ing-font);
     }
 
     button:active{
