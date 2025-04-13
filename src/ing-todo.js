@@ -13,9 +13,11 @@ class IngTodo extends LitElement {
 
   constructor() {
     super();
+    // Get localStorage todos, if empty set to empty array
     this.todos = JSON.parse(localStorage.getItem('todos')) || [];
   }
 
+  // Add new todo from todo-form
   addTodo = e => {
     this.todos = [...this.todos, {
       id: crypto.randomUUID(),
@@ -24,13 +26,17 @@ class IngTodo extends LitElement {
     }];
   }
 
+  // Remove todo from todo-item
   removeTodoItem = e => {
     this.todos = this.todos.filter(todo => todo.id !== e.detail);
   }
 
+  // Toggle todo item from todo-item
   toggleCompleteTodoItem = e => {
+    // Loop over todo items
     this.todos = this.todos.map(todo => {
       if(todo.id == e.detail.todoId) {
+        // Set isCompleted to the right todo item
         return {...todo, isCompleted: e.detail.checkboxValue}
       }
 
@@ -40,6 +46,7 @@ class IngTodo extends LitElement {
 
   updated(changedProps) {
     if (changedProps.has('todos')) {
+      // Set todos property as localStorage item after it's changed
       localStorage.setItem("todos", JSON.stringify(this.todos));
     }
   }
