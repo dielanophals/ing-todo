@@ -40,7 +40,6 @@ export const todoItemStyles = css`
 
     li img {
         width:20px;
-        cursor: pointer;
     }
 
     .todo-delete {
@@ -54,6 +53,10 @@ export const todoItemStyles = css`
         li img {
             opacity: 0;
             transition: 0.2s;
+        }
+
+        .todo-delete:focus img {
+            opacity: 1
         }
 
         li:hover img {
