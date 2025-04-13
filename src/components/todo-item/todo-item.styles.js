@@ -10,7 +10,7 @@ export const todoItemStyles = css`
         align-items: center;
         border-radius: 8px;
         padding: 12px 15px;
-        background-color: var(--bg-color);;
+        background-color: var(--bg-color);
         margin: 10px 0;
         margin-left: 5%;
         word-break: break-word;
@@ -40,6 +40,13 @@ export const todoItemStyles = css`
 
     li img {
         width:20px;
+        cursor: pointer;
+    }
+
+    .todo-delete {
+        background: none;
+        border: none;
+        padding: 0;
         cursor: pointer;
     }
 

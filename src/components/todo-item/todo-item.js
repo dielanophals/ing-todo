@@ -34,7 +34,14 @@ export class TodoItem extends LitElement {
             <li class="checkbox-area">
                 <input type="checkbox" id="todo-checkbox" .checked=${this.todo.isCompleted} @change=${this.toggleCompleteTodoItem} title="Complete item">
                 <label for="todo-checkbox" title="Complete item">${this.todo.title}</label>
-                <img src=${cross} alt="Delete todo item" title="Delete item" @click=${() => this.removeTodoItem(this.todo.id)}/>
+                <button
+                    @click=${() => this.removeTodoItem(this.todo.id)}
+                    title="Delete item"
+                    aria-label="Delete todo"
+                    class="todo-delete"
+                    >
+                    <img src=${cross} alt="" />
+                </button>
             </li>
         `;
     }
