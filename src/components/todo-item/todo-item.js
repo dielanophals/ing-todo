@@ -5,6 +5,7 @@ const cross = new URL('../../../assets/icons/cross.svg', import.meta.url).href;
 
 export class TodoItem extends LitElement {
     static properties = {
+        // Set todo property
         todo: { type: Object }
     }
 
@@ -14,6 +15,7 @@ export class TodoItem extends LitElement {
         super();
     }
 
+    // Toggle todo item when checkbox is clicked
     toggleCompleteTodoItem = e => {
         this.dispatchEvent(new CustomEvent('toggle-complete-todo-item', {
             detail: {
@@ -23,6 +25,7 @@ export class TodoItem extends LitElement {
         }));
     }
 
+    // Remove todo item when remove button is clicked
     removeTodoItem = id => {
         this.dispatchEvent(new CustomEvent('remove-todo-item', {
             detail: id
