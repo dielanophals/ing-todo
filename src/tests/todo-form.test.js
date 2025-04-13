@@ -1,5 +1,5 @@
 import { fixture, html, expect, oneEvent } from '@open-wc/testing';
-import '../components/todo-form.js';
+import '../components/todo-form/todo-form.js';
 
 describe('<todo-form>', () => {
   it('Is empty at start', async () => {
