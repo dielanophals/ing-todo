@@ -1,5 +1,5 @@
 import { fixture, html, expect, oneEvent } from '@open-wc/testing';
-import '../../components/todo-item.js';
+import '../components/todo-item/todo-item.js';
 
 describe('<todo-item>', () => {
     // Create Sample todo item
