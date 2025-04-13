@@ -1,7 +1,7 @@
 import { LitElement, html, css } from 'lit';
 import { repeat } from 'lit/directives/repeat.js';
 import './components/todo-form/todo-form.js'
-import './components/todo-item.js'
+import './components/todo-item/todo-item.js'
 
 class IngTodo extends LitElement {
   static properties = {
