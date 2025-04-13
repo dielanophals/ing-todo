@@ -2,51 +2,14 @@ import { LitElement, html, css } from 'lit';
 import { repeat } from 'lit/directives/repeat.js';
 import './components/todo-form/todo-form.js'
 import './components/todo-item/todo-item.js'
+import { ingTodoStyles } from './ing-todo.styles.js';
 
 class IngTodo extends LitElement {
   static properties = {
     todos: { type: Array },
   }
 
-  static styles = css`
-    * {
-      margin: 0;
-      padding: 0;
-    }
-
-    :host {
-      --ing-color: #ff6200;
-      --font-color: #333;
-      --bg-color: #f0f0f0;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      font-size: 16px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    main {
-      flex-grow: 1;
-      width: 600px;
-      max-width:100%;
-    }
-
-    .todo-header {
-      margin-top: 20px;
-    }
-
-    .todo-items {
-      margin-top: 20px;
-    }
-
-    .todo-items p {
-      color: var(--font-color);
-      font-size: 20px;
-    }
-  `;
+  static styles = [ingTodoStyles];
 
   constructor() {
     super();
