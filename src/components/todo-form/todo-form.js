@@ -5,16 +5,18 @@ import { todoFormStyles } from './todo-form.styles.js';
 
 export class TodoForm extends LitElement {
     static properties = {
-        todo: { type: String },
+        // Set todo property
+        todo: { type: String }
     }
 
     static styles = [todoFormStyles];
 
-
+    // Change value of todo
     changeTodo = e => {
         this.todo = e.target.value
     }
 
+    // Send custom event when form is submitted
     submitHandler = e => {
         e.preventDefault();
         if(this.todo.trim()){
