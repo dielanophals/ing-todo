@@ -20,12 +20,14 @@ export const todoFormStyles = css`
         background-color: var(--bg-color);
         font-size: 16px;
         color: var(--font-color);
+        font-family: var(--ing-font);
     }
 
     button {
         color: var(--font-color);
         cursor: pointer;
         margin-left: 10px;
+        font-family: var(--ing-font);
     }
 
     button:active{

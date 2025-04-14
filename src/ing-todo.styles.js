@@ -10,6 +10,8 @@ export const ingTodoStyles = css`
       --ing-color: #ff6200;
       --font-color: #333;
       --bg-color: #f0f0f0;
+      --ing-font: "ING Me", sans-serif;
+      --ing-font-bold: "ING Me Bold", sans-serif;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -18,6 +20,7 @@ export const ingTodoStyles = css`
       font-size: 16px;
       margin: 0 auto;
       text-align: center;
+      font-family: var(--ing-font);
     }
 
     main {
@@ -28,6 +31,7 @@ export const ingTodoStyles = css`
 
     .todo-header {
       margin-top: 20px;
+      font-family: var(--ing-font-bold);
     }
 
     .todo-items {

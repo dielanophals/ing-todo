@@ -36,6 +36,7 @@ export const todoItemStyles = css`
         color: var(--ing-color);
         font-weight: bold;
         text-decoration: line-through;
+        font-family: var(--ing-font-bold);
     }
 
     li img {
