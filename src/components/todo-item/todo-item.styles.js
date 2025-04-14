@@ -38,8 +38,9 @@ export const todoItemStyles = css`
         text-decoration: line-through;
     }
 
-    li img {
+    li lion-icon {
         width:20px;
+        height: 20px;
     }
 
     .todo-delete {
@@ -50,16 +51,16 @@ export const todoItemStyles = css`
     }
 
     @media only screen and (min-width : 1025px) {
-        li img {
+        li lion-icon {
             opacity: 0;
             transition: 0.2s;
         }
 
-        .todo-delete:focus img {
+        .todo-delete:focus lion-icon {
             opacity: 1
         }
 
-        li:hover img {
+        li:hover lion-icon {
             opacity: 1;
         }
     }

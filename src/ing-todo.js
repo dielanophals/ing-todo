@@ -3,6 +3,20 @@ import { repeat } from 'lit/directives/repeat.js';
 import './components/todo-form/todo-form.js'
 import './components/todo-item/todo-item.js'
 import { ingTodoStyles } from './ing-todo.styles.js';
+import { icons } from '@lion/ui/icon.js';
+
+function resolveLionIcon(iconset, name) {
+  switch (iconset) {
+    case 'icons':
+      return import('./icons/iconset-icons.js').then(module => {
+          return module[name]
+      });
+    default:
+      throw new Error(`Unknown iconset ${iconset}`);
+  }
+}
+
+icons.addIconResolver('ing-app', resolveLionIcon);
 
 class IngTodo extends LitElement {
   static properties = {
