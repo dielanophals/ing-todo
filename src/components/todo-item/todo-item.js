@@ -1,7 +1,6 @@
 import { LitElement, html, css } from 'lit';
 import { todoItemStyles } from './todo-item.styles.js';
-
-const cross = new URL('../../../assets/icons/cross.svg', import.meta.url).href;
+import '@lion/ui/define/lion-icon.js';
 
 export class TodoItem extends LitElement {
     static properties = {
@@ -43,7 +42,7 @@ export class TodoItem extends LitElement {
                     aria-label="Delete todo"
                     class="todo-delete"
                 >
-                    <img src=${cross} alt="" />
+                    <lion-icon icon-id="ing-app:icons:cross"></lion-icon>
                 </button>
             </li>
         `;
