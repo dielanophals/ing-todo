@@ -33,7 +33,7 @@ export class TodoItem extends LitElement {
 
     render() {
         return html`
-            <li class="checkbox-area">
+            <li>
                 <input type="checkbox" id=${this.todo.id} .checked=${this.todo.isCompleted} @change=${this.toggleCompleteTodoItem} title="Complete item">
                 <label for=${this.todo.id} title="Complete item">${this.todo.title}</label>
                 <button
