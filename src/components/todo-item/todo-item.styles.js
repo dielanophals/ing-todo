@@ -15,6 +15,11 @@ export const todoItemStyles = css`
         margin-left: 5%;
         word-break: break-word;
         box-shadow: rgba(0, 0, 0, 0.14) 0px 2px 2px 0px, rgba(0, 0, 0, 0.12) 0px 3px 1px -2px, rgba(0, 0, 0, 0.2) 0px 1px 5px 0px;
+        transition: 0.2s;
+    }
+
+    li:hover {
+        background:rgba(255, 98, 0, 0.3);
     }
 
     li label {
