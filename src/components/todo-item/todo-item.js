@@ -38,8 +38,8 @@ export class TodoItem extends LitElement {
                 <label for=${this.todo.id} title="Complete item">${this.todo.title}</label>
                 <button
                     @click=${() => this.removeTodoItem(this.todo.id)}
-                    title="Delete item"
-                    aria-label="Delete todo"
+                    title="Delete ${this.todo.title}"
+                    aria-label="Delete ${this.todo.title}"
                     class="todo-delete"
                 >
                     <lion-icon icon-id="ing-app:icons:cross"></lion-icon>
