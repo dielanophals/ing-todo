@@ -1,19 +1,9 @@
 import { fixture, html, expect, oneEvent } from '@open-wc/testing';
 import '../components/todo-item/todo-item.js';
 import { icons } from '@lion/ui/icon.js';
+import { resolveLionIcon } from '../icon-manager.js';
 
 before( async () => {
-    function resolveLionIcon(iconset, name) {
-        switch (iconset) {
-            case 'icons':
-            return import('../icons/iconset-icons.js').then(module => {
-                return module[name]
-            });
-            default:
-            throw new Error(`Unknown iconset ${iconset}`);
-        }
-    }
-
     icons.addIconResolver('ing-app', resolveLionIcon);
 });
 
