@@ -1,5 +1,21 @@
 import { fixture, html, expect, oneEvent } from '@open-wc/testing';
 import '../components/todo-item/todo-item.js';
+import { icons } from '@lion/ui/icon.js';
+
+before( async () => {
+    function resolveLionIcon(iconset, name) {
+        switch (iconset) {
+            case 'icons':
+            return import('../icons/iconset-icons.js').then(module => {
+                return module[name]
+            });
+            default:
+            throw new Error(`Unknown iconset ${iconset}`);
+        }
+    }
+
+    icons.addIconResolver('ing-app', resolveLionIcon);
+});
 
 describe('<todo-item>', () => {
     // Create Sample todo item
@@ -39,7 +55,7 @@ describe('<todo-item>', () => {
 
     it('Delete todo item and check sent id', async () => {
         const el = await fixture(html`<todo-item .todo=${sampleTodo}></todo-item>`);
-        const deleteBtn = el.shadowRoot.querySelector('img');
+        const deleteBtn = el.shadowRoot.querySelector('lion-icon');
 
         setTimeout(() => deleteBtn.click());
 
