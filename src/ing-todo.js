@@ -39,9 +39,20 @@ class IngTodo extends LitElement {
   toggleCompleteTodoItem = e => {
     // Loop over todo items
     this.todos = this.todos.map(todo => {
-      if(todo.id == e.detail.todoId) {
+      if(todo.id === e.detail.todoId) {
         // Set isCompleted to the right todo item
         return {...todo, isCompleted: e.detail.checkboxValue}
+      }
+
+      return todo;
+    });
+  }
+
+  editTodoItem = e => {
+    this.todos = this.todos.map(todo => {
+      if(todo.id === e.detail.todoId) {
+        // Set isCompleted to the right todo item
+        return {...todo, title: e.detail.title}
       }
 
       return todo;
@@ -71,6 +82,7 @@ class IngTodo extends LitElement {
                 .todo=${todo}
                 @remove-todo-item=${this.removeTodoItem}
                 @toggle-complete-todo-item=${this.toggleCompleteTodoItem}
+                @edit-todo-item=${this.editTodoItem}
               ></todo-item>
               `)}
           </ul>
