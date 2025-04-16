@@ -38,7 +38,9 @@ export class TodoItem extends LitElement {
 
       editTitleTodo = (e) => {
         this.todo.title = e.target.value;
+      }
 
+      submitEditTodo = (e) => {
         this.dispatchEvent(new CustomEvent('edit-todo-item', {
             detail: {
                 title: this.todo.title,
@@ -53,10 +55,10 @@ export class TodoItem extends LitElement {
         return html`
             <li>
                 ${this.isEditModus ? html`
-                <lion-form @submit=${this.editTitleTodo}>
+                <lion-form @submit=${this.submitEditTodo}>
                     <form @submit=${ev => ev.preventDefault()}>
                         <lion-input name="todo" label="Edit todo" .modelValue=${this.todo.title} @input=${this.editTitleTodo} autocomplete="off"></lion-input>
-                        <button>Add todo</button>
+                        <button>Edit todo</button>
                     </form>
                 </lion-form>
                 ` : 
